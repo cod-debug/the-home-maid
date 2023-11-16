@@ -1,4 +1,4 @@
-
+/* FontFamily Agblumo */
 @font-face {
 	font-family: 'Agbalumo';
 	src: url("./assets/fonts/Agbalumo-Regular.ttf") format('truetype');
@@ -6,11 +6,35 @@
 	font-style: normal; 
 }
 
+/* FontFamily Verela Round */
 @font-face {
   font-family: 'Varela Round';
 	src: url("./assets/fonts/VarelaRound-Regular.ttf") format('truetype');
 	font-weight: 400;
 	font-style: normal; 
+}
+
+
+/* FontFamily Cabin */
+@font-face {
+  font-family: 'Cabin';
+  font-weight: 400;
+  src: url('./assets/fonts/Cabin/Cabin-Regular.ttf');
+	font-style: normal; 
+}
+
+@font-face {
+  font-family: 'Cabin';
+  font-weight: 700;
+  src: url('./assets/fonts/Cabin/Cabin-Bold.ttf');
+	font-style: normal; 
+}
+
+@font-face {
+  font-family: 'Cabin';
+  font-weight: 700;
+  src: url('./assets/fonts/Cabin/Cabin-BoldItalic.ttf');
+	font-style: italic; 
 }
 
 :root {
@@ -94,6 +118,21 @@ p.danger {
   justify-content: center;
   align-items: center;
 }
+
+/* shadows */
+.shadow-1  {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.shadow-2 {
+  box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+}
+.shadow-3 {
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+}
+.shadow-4 {
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+
 /* header css */
 .logo {
   width: 90px;
@@ -115,6 +154,30 @@ p.danger {
 #myNav.navbar.scrolled {
   padding: 0px;
   background-color: white!important;
+}
+
+.navbar-nav a {
+  text-align: center;
+  position: relative;
+  margin: 0 10px;
+  padding: 12px;
+}
+
+.navbar-nav a:hover::before,
+.navbar-nav a.active::before {
+  width: 100%;
+}
+
+.navbar-nav a::before {
+  content: "";
+  width: 0;
+  height: 100%;
+  top: 0;
+  left: 50%;
+  position: absolute;
+  border-bottom: 2px solid var(--accent);
+  transition: .3s ease-in-out;
+  transform: translateX(-50%); /* Adjust to center properly */
 }
 
 /* home css */
@@ -144,7 +207,7 @@ p.danger {
   transition: .5s ease-in-out;
   display: inline-block;
   letter-spacing: 3px;
-  background: linear-gradient(90deg, rgba(255,255,255, .5) 0%, rgba(219,153,114, .5) 100%);
+  background: linear-gradient(90deg, #fff8e7 0%, rgba(219,153,114, .5) 100%);
   border-radius: 20px;
   font-size: 1.1rem;
 }
@@ -153,23 +216,22 @@ p.danger {
   content: "";
   position: relative;
   background: rgb(219,153,114);
-  border-top: 2px solid var(--primary);
-  border-bottom: 2px solid var(--primary);
   opacity: 0;
   border-radius: 20px;
-  background: linear-gradient(90deg, rgba(219,153,114, .5) 0%, rgba(255,255,255, .5) 100%);
+  background: var(--dark-brown)!important;
   width: 0;
   height: 100%;
   z-index: -1;
   top: 0;
   left: 0;
   position: absolute;
-  transition: .5s ease-in-out;
+  transition: .2s ease-in-out;
 }
 
 #home .inquire-btn:hover {
-  color: var(--secondary);
+  color: var(--light-brown);
   letter-spacing: 4px;
+  background: transparent;
 }
 
 #home .inquire-btn:hover::before {
@@ -203,10 +265,12 @@ p.danger {
   padding: 10px;
   background: #FFCDAF;
   box-shadow: inset 39px 39px 78px #deb298,
-              inset -39px -39px 78px #ffe8c6;
-  
+              inset -39px -39px 78px #ffe8c6;  
 }
 
+svg.wave-1 {
+  margin-bottom: -1px;
+}
 
 /* services css */
 #services {
@@ -218,12 +282,46 @@ p.danger {
 #services .container {
   position: relative;
 }
+
 #services .services-bx {
   width: 100%;
   min-height: 200px;
-  margin-top: -120px;
   z-index: 3;
-  position: absolute;
   border-radius: 20px;
   background-color: var(--light-brown);
+}
+
+#services .services-bx h1 {
+  font-family: 'Agbalumo';
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 3.5rem;
+  color: var(--secondary);
+  letter-spacing: 2px;
+}
+
+.service-slideshow {
+  z-index: 5;
+}
+
+
+
+
+
+
+
+/* STAR RATING */
+.star-rating {
+  font-size: 24px;
+  display: inline-block;
+  user-select: none;
+}
+
+.star {
+  cursor: pointer;
+}
+
+.star:hover,
+.star.filled {
+  color: #f39c12; /* Set the color for filled stars */
 }
