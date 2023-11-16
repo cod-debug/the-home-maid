@@ -1,0 +1,229 @@
+
+@font-face {
+	font-family: 'Agbalumo';
+	src: url("./assets/fonts/Agbalumo-Regular.ttf") format('truetype');
+	font-weight: 400;
+	font-style: normal; 
+}
+
+@font-face {
+  font-family: 'Varela Round';
+	src: url("./assets/fonts/VarelaRound-Regular.ttf") format('truetype');
+	font-weight: 400;
+	font-style: normal; 
+}
+
+:root {
+  --primary: #B1693F;
+  --secondary: #87431A;
+  --accent: #DB9972;
+  --light-brown: #FFCDAF;
+  --dark-brown: #5C2302;
+  --lighter-brown: #fff8e7;
+}
+
+/* DEFAULT CSS*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Varela Round', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 115px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 0;
+  line-height: normal;
+}
+
+body {
+  font-weight: 400;
+  overflow-x: hidden;
+  position: relative;
+  background-color: var(--lighter-brown)!important;
+  color: var(--primary) !important;
+  font-family: 'Centra', sans-serif !important;
+}
+p, a, li, button, ul {
+  margin: 0;
+  padding: 0;
+  line-height: normal;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+button {
+  border: 0;
+  background-color: transparent;
+}
+
+input:focus, textarea:focus, select:focus {
+  outline: none;
+}
+
+@media (min-width:1700px) {
+	main .container {
+		max-width: 100%;
+		padding: 0 150px;
+	}
+}
+
+p.success {
+	color: green;
+}
+
+p.danger {
+	color: red;
+}
+.flex-center-v {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* header css */
+.logo {
+  width: 90px;
+}
+.nav-link {
+  color: var(--primary)!important;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+#myNav {
+  position: sticky;
+  z-index: 2000;
+  top: 0;
+  left: 0;
+  background-color: transparent!important;
+  transition: .5s ease-in-out;
+}
+#myNav.navbar.scrolled {
+  padding: 0px;
+  background-color: white!important;
+}
+
+/* home css */
+#home {
+  display: flex;
+  align-items: center;
+}
+
+#home .tagline {
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 3.5rem;
+  letter-spacing: 5px;
+  font-family: 'Agbalumo';
+}
+
+#home .simple-txt {
+  font-size: 1.3rem;
+}
+
+#home .inquire-btn {
+  text-decoration: none;
+  color: var(--primary);
+  font-weight: bold;
+  padding: 15px 30px;
+  position: relative;
+  transition: .5s ease-in-out;
+  display: inline-block;
+  letter-spacing: 3px;
+  background: linear-gradient(90deg, rgba(255,255,255, .5) 0%, rgba(219,153,114, .5) 100%);
+  border-radius: 20px;
+  font-size: 1.1rem;
+}
+
+#home .inquire-btn::before {
+  content: "";
+  position: relative;
+  background: rgb(219,153,114);
+  border-top: 2px solid var(--primary);
+  border-bottom: 2px solid var(--primary);
+  opacity: 0;
+  border-radius: 20px;
+  background: linear-gradient(90deg, rgba(219,153,114, .5) 0%, rgba(255,255,255, .5) 100%);
+  width: 0;
+  height: 100%;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  position: absolute;
+  transition: .5s ease-in-out;
+}
+
+#home .inquire-btn:hover {
+  color: var(--secondary);
+  letter-spacing: 4px;
+}
+
+#home .inquire-btn:hover::before {
+  width: 100%;
+  opacity: 1;
+}
+
+#home .carousel-holder {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* border-left: 2px solid var(--accent); */
+}
+
+#home .react-multiple-carousel__arrow {
+  background-color: transparent;
+}
+
+#home .react-multiple-carousel__arrow::before {
+  color: var(--light-brown)!important;
+}
+#home .single-cake {
+  text-align: center;
+  margin: 40px 0;
+}
+
+#home .single-cake .cake {
+  width: 60%;
+  border-radius: 50%;
+  padding: 10px;
+  background: #FFCDAF;
+  box-shadow: inset 39px 39px 78px #deb298,
+              inset -39px -39px 78px #ffe8c6;
+  
+}
+
+
+/* services css */
+#services {
+  background-color: var(--accent);
+  min-height: 50vh;
+  text-align: center;
+}
+
+#services .container {
+  position: relative;
+}
+#services .services-bx {
+  width: 100%;
+  min-height: 200px;
+  margin-top: -120px;
+  z-index: 3;
+  position: absolute;
+  border-radius: 20px;
+  background-color: var(--light-brown);
+}
